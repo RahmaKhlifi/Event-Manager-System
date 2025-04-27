@@ -3,10 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './components/header/header.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { ParticipateComponent } from './participate/participate.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    LandingPageComponent,
+    ParticipateComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,84 @@
+<app-header></app-header>
+
+    <div class="container-fluid d-flex align-items-center justify-content-center">
+      <div class="row w-100"> 
+   
+   <!-- Info Section -->
+   <div class="container my-5">
+     <div class="row align-items-center">
+       <div class="col-md-6">
+         <h2 style="color: #67206A;">What is Event Management?</h2>
+         <p style="color: #E2B52E;">
+           Event management is the application of project management to the creation and development of
+           large-scale events such as festivals, conferences, ceremonies, weddings, formal parties,
+           concerts, or conventions. It involves:
+         </p>
+         <ul>
+           <li style="color: #67206A;">Concept development & budgeting</li>
+           <li style="color: #67206A;">Venue selection & logistics</li>
+           <li style="color: #67206A;">Marketing & promotion</li>
+           <li style="color: #67206A;">On-site coordination & risk management</li>
+         </ul>
+       </div>
+       <div class="col-md-6">
+         <img src="assets/images/planning.jpg" alt="Planning" class="img-fluid rounded shadow-sm">
+       </div>
+     </div>
+   
+     <!-- Gallery of Your Pictures -->
+     <div class="row mt-4">
+       <div class="col-md-4 mb-3" *ngFor="let pic of gallery">
+         <div class="card h-100" style="border-color: #E2B52E;">
+           <img [src]="pic.src" class="card-img-top" [alt]="pic.alt">
+           <div class="card-body">
+             <h5 class="card-title" style="color: #67206A;">{{ pic.title }}</h5>
+             <p class="card-text" style="color: #E2B52E;">{{ pic.caption }}</p>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+
+   <div class="container my-5">
+  <div class="row text-center mb-4">
+    <div class="col">
+      <h2 style="color: #67206A;">Our Services</h2>
+      <p style="color: #E2B52E;">We provide exceptional event management services tailored to your needs.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 mb-3">
+      <div class="card h-100" style="border-color: #E2B52E;">
+        <img src="assets/images/calendar.webp" class="card-img-top" alt="Event Planning">
+        <div class="card-body">
+          <h5 class="card-title" style="color: #67206A;">Event Planning</h5>
+          <p class="card-text" style="color: #E2B52E;">From concept to execution, we plan every detail of your event.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <div class="card h-100" style="border-color: #E2B52E;">
+        <img src="assets/images/team-work.webp" class="card-img-top" alt="Team Coordination">
+        <div class="card-body">
+          <h5 class="card-title" style="color: #67206A;">Team Coordination</h5>
+          <p class="card-text" style="color: #E2B52E;">Our team ensures seamless coordination for a stress-free experience.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <div class="card h-100" style="border-color: #E2B52E;">
+        <img src="assets/images/logo.png" class="card-img-top" alt="Branding">
+        <div class="card-body">
+          <h5 class="card-title" style="color: #67206A;">Branding</h5>
+          <p class="card-text" style="color: #E2B52E;">We help you create a lasting impression with unique branding.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+   
+  </div>
+</div>

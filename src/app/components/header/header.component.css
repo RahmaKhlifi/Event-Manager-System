@@ -1,0 +1,94 @@
+/* Navbar Styling */
+.custom-navbar {
+  position: relative;
+  z-index: 1;
+}
+
+/* Add a left half background using ::before */
+.custom-navbar::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 50vw; /* Half the viewport width */
+  background-color: #7ec0f9;
+  z-index: -1;
+}
+.navbar {
+  background-color: #67206A !important;
+  display: flex;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #003366 !important;
+  text-shadow: 2px 2px #ccc;
+}
+
+.navbar-brand:hover {
+  color: #672184 !important;
+}
+
+/* Ensure the button styles are applied correctly */
+.btn {
+  font-weight: bold;
+  border-radius: 999px;
+  padding: 6px 20px;
+  background-color: #E2B52E;
+  border: none;
+  color: #fff; /* Ensure text color is visible */
+  text-align: center; /* Center text inside the button */
+  display: inline-block; /* Ensure proper button display */
+  cursor: pointer; /* Add pointer cursor for better UX */
+}
+
+.btn:hover {
+  background-color: #220155;
+  color: #fff; /* Maintain text color on hover */
+}
+
+.logo {
+  width: 120px;
+  height: 50px;
+  margin-right: 10px;
+}
+h1, h2 {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.card {
+  transition: transform .2s;
+  &:hover {
+    transform: translateY(-4px);
+  }
+}
+.background-image {
+  background-size: auto;
+  background-position: center;
+  width: 99vw;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+.banner {
+  height: 15vh; /* or e.g. 400px, whatever fits your design */
+  background-blend-mode: multiply;
+}
+
+.lead {
+  font-weight: 900;                        
+  font-size: 1.75rem;                     
+  color: #FFFFFF;                        
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.7),         
+    0 0 8px rgba(255, 255, 255, 0.6);      
+}
+
+/* Add spacing between buttons */
+.d-flex > div {
+  margin: 0 10px; /* Add horizontal margin to create space */
+}
