@@ -61,3 +61,11 @@ ul {
   margin-bottom: 3rem !important;
 }
 
+/* Ensure the navigation bar is sticky */
+.nav-sticky {
+  top: 0;
+  z-index: 1000; /* Ensure it stays above other content */
+  background-color: #fff; /* White background for contrast */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 10px 0; /* Padding for better spacing */
+}

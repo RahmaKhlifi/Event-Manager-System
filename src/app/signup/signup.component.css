@@ -1,0 +1,24 @@
+:host {
+      /* reuse same variables */
+      --brand-purple: #5a2e8a;
+      --brand-gold: #f2b807;
+    
+      body {
+        background-color: #f8f9fa;
+        color: #333;
+      }
+    
+      .navbar { background-color: var(--brand-purple); }
+      .navbar .navbar-brand { color: #fff; font-weight: bold; letter-spacing: 1px; }
+      .auth-card { border: none; border-radius: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+      .btn-gold { background-color: var(--brand-gold); color: #fff; font-weight: 500; }
+      .btn-gold:hover { background-color: #ddb106; color: #fff; }
+      .form-heading { color: var(--brand-purple); font-weight: bold; margin-bottom: 1.5rem; }
+      a { color: var(--brand-purple); }
+      a:hover { color: #472165; text-decoration: none; }
+      .logo {
+        width: 170px;
+        height: 70px;
+        margin-right: 10px;
+  }
+    }

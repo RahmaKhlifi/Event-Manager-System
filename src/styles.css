@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+/* Ensure parent containers support sticky positioning */
+body, html {
+  height: 100%; /* Ensure the body and html have a height */
+  overflow: visible; /* Allow sticky elements to function properly */
+}
+
+/* Ensure the navigation bar is sticky */
+.nav-sticky {
+  top: 0;
+  z-index: 1000; /* Ensure it stays above other content */
+  background-color: #fff; /* White background for contrast */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 10px 0; /* Padding for better spacing */
+}
