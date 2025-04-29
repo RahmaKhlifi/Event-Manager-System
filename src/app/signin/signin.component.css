@@ -48,5 +48,13 @@
         color: #472165;
         text-decoration: none;
       }
+      .spacer {
+        height: 10vh;
+    }
+    .logo {
+        width: 170px;
+        height: 150px;
+        margin-right: 10px;   
       
     }
+  }

@@ -17,8 +17,11 @@
       a { color: var(--brand-purple); }
       a:hover { color: #472165; text-decoration: none; }
       .logo {
-        width: 170px;
-        height: 70px;
+        width: 190px;
+        height: 100px;
         margin-right: 10px;
+  }
+  .spacer {
+      height: 10vh;
   }
     }

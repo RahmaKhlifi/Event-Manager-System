@@ -1,0 +1,102 @@
+.spacer {
+      height: 20vh;
+  }
+
+  body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .comment-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .comment-box h3 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .comment-box label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+      color: #444;
+    }
+
+    .comment-box input,
+    .comment-box textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 15px;
+    }
+
+    .comment-box textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .comment-box button {
+      background: #6E1766;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-left: 3vw;
+    }
+
+    .comment-box button:hover {
+      background: #FFB41B;
+    }
+
+    @media (max-width: 600px) {
+      .comment-box {
+        padding: 20px;
+      }
+    }
+
+    .error {
+      color: #dc3545;             /* Bootstrap's danger color (red) */
+      font-style: italic;
+      font-size: 0.875rem;        /* Slightly smaller for helper text */
+      margin-top: 4px;
+      display: block;
+      transition: all 0.3s ease;  /* Smooth appearance */
+    }
+
+    .logo {
+      width: 200px;
+      height: 170px;
+      margin-right: 10px;   
+    }
+
+    /* Responsive adjustments for ParticipateComponent */
+@media (max-width: 768px) {
+  .comment-box {
+    padding: 15px;
+    width: 90%;
+  }
+
+  .comment-box button {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+
+  .comment-box input,
+  .comment-box textarea {
+    font-size: 14px;
+  }
+}

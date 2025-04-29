@@ -1,0 +1,24 @@
+<div class="card mb-4 box-shadow" style="max-width: 250px;">
+      <img class="imageheight card-img-top" style="max-width: 250px; max-height: 250px;"
+      [src]="event.image? this.baseurl+ event.image : 'assets/images/noimage.png'" alt="event Image">
+      <div class="card-body">
+        <h5 class="card-title">{{ event.title }}</h5>
+        <p class="card-text">Price: {{ event.price| currency}}</p>
+        <p class="card-text">Description: {{ event.description }}</p>
+        <p class="card-text">Date: {{ event.Date }}</p>
+        <p class="card-text">Location: {{ event.location }}</p>
+        <p class="card-text">Number Of Places: {{ event.numplaces }}</p>
+      </div>
+      <div class="card-footer">
+        <div class="row">
+           <a class="btn btn-warning col-xl-4 mt-2"  routerLink="/manage/{{event.id}}">Update</a>
+          
+          <div class="col-xl-4"></div>  
+          <button class="btn btn-danger col-xl-4 mt-2"  (click)="deleteEvent(event.id)">
+            <span *ngIf="!isLoading">Delete</span>
+            <span *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          </button>
+          
+        </div>
+      </div>
+    </div>

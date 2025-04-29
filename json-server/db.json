@@ -1,51 +1,141 @@
 {
-      "events":[
-            {
-                  "id": 1,
-                  "title": "conference",
-                  "date": "2023-10-01",
-                  "location": "Location 1",
-                  "description": "Description for Event 1",
-                  "numplaces": 2,
-                  "price": 100.00,
-                  "category" : "conference"
-            },
-            {
-                  "id": 2,
-                  "title": "atelier",
-                  "date": "2023-10-02",
-                  "location": "Location 2",
-                  "description": "Description for Event 2",
-                  "numplaces": 4,
-                  "price": 10.00,
-                  "category" : "atelier"
-            },
-            {
-                  "id": 3,
-                  "title": "seminaire",
-                  "date": "2023-10-03",
-                  "location": "Location 3",
-                  "description": "Description for Event 3",
-                  "numplaces": 17,
-                  "price": 50.00,
-                  "category" : "seminaire"
-            }
-      ],
-
-      "participants" : [
-             {
-                  "id": 1,
-                  "name": "Participant 1",
-                  "email": "test@mail.com",
-                  "phone": "1234567890",
-                  "eventId": 1
-            },    
-            {
-                  "id": 2,
-                  "name": "Participant 2",
-                  "email": "test1@mail.com",
-                  "phone": "0987654321",
-                  "eventId": 2
-            }
-      ]
+  "events": [
+    {
+      "id": 1,
+      "title": "conference",
+      "adminID": 1,
+      "Date": "2023-10-01",
+      "location": "Location 1",
+      "description": "Description for Event 1",
+      "numplaces": 1,
+      "price": 100,
+      "category": "conference",
+      "image": "images/conference.jpg",
+      "organizor": "Organizer 1"
+    },
+    {
+      "id": 3,
+      "adminID": 1,
+      "image": "images/seminaire.jpg",
+      "title": "seminaire",
+      "Date": "2023-10-03",
+      "location": "Location 3",
+      "description": "Description for Event 3",
+      "numplaces": 16,
+      "price": 50,
+      "category": "seminaire",
+      "organizor": "Organizer 1"
+    },
+    {
+      "id": 6,
+      "adminID": 1,
+      "title": "seminaire",
+      "Date": "2023-10-03",
+      "location": "Location 3",
+      "description": "Description for Event 3",
+      "numplaces": 16,
+      "price": 50,
+      "category": "seminaire",
+      "organizor": "Organizer 1"
+    },
+    {
+      "id": 5,
+      "adminID": 1,
+      "image": "images/seminaire.jpg",
+      "title": "seminaire",
+      "Date": "2023-10-03",
+      "location": "Location 3",
+      "description": "Description for Event 3",
+      "numplaces": 16,
+      "price": 50,
+      "category": "seminaire",
+      "organizor": "Organizer 1"
+    }
+  ],
+  "participants": [
+    {
+      "id": 1,
+      "name": "Participant 1",
+      "email": "test@mail.com",
+      "phone": "1234567890",
+      "eventId": 1
+    },
+    {
+      "name": "imed",
+      "email": "imed@mail.com",
+      "phone": "12345678",
+      "eventId": 1,
+      "id": 3
+    },
+    {
+      "name": "imed",
+      "email": "imed@mail.com",
+      "phone": "12345678",
+      "eventId": 3,
+      "id": 5
+    },
+    {
+      "name": "rahma",
+      "email": "rahma@mail.com",
+      "phone": "55555555",
+      "eventId": 1,
+      "id": 6
+    },
+    {
+      "name": "jihed",
+      "email": "jj@gmail.com",
+      "phone": "44444444",
+      "eventId": 1,
+      "id": 7
+    },
+    {
+      "name": "jiji",
+      "email": "jijistone@gmail.com",
+      "phone": "11411411",
+      "eventId": 1,
+      "id": 8
+    },
+    {
+      "name": "jiji",
+      "email": "jijistone@gmail.com",
+      "phone": "11411411",
+      "eventId": 1,
+      "id": 9
+    },
+    {
+      "name": "rahma",
+      "email": "rahma@mail.com",
+      "phone": "55555555",
+      "eventId": 1,
+      "id": 10
+    },
+    {
+      "name": "rahma",
+      "email": "rahma@mail.com",
+      "phone": "55555555",
+      "eventId": 1,
+      "id": 11
+    },
+    {
+      "name": "rahma",
+      "email": "rahma@mail.com",
+      "phone": "55555555",
+      "eventId": 1,
+      "id": 12
+    },
+    {
+      "name": "rahma",
+      "email": "rahma@mail.com",
+      "phone": "55555555",
+      "eventId": 1,
+      "id": 13
+    },
+    {
+      "name": "rahma",
+      "email": "rahma@mail.com",
+      "phone": "55555555",
+      "eventId": 1,
+      "id": 14
+    }
+  ]
 }

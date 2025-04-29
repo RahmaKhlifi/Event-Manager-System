@@ -1,0 +1,28 @@
+<div class="spacer"></div>
+<div class="container">
+        <div class="text-center">
+            <img  src="assets/images/EVENTS.png" alt="Event Details" class="img-fluid image">
+        </div>
+        <p class="text-center">Manage your events here</p>
+        <hr>
+      <div class="mt-2 mb-4">
+            <button class="btn " (click)="onAddEvent()">
+                 Add Event
+            </button>
+        </div>
+        <div  class="row" *ngIf="events.length>0; else noevents">
+            <div class="col-md-3"  *ngFor="let event of events">
+                    <app-event-detail class="divheight" [event]="event" (eventSelected)="handleEmit()"></app-event-detail>     
+            </div>
+        </div>
+        <div [hidden]="!isWaiting" class="text-center">
+            <div class="spinner-border" role="status"></div>
+            <h4>Loading... Please Wait</h4>
+        </div>
+        <ng-template #noevents>
+            <p class="alert alert-warning mt-2" [hidden]="isWaiting">Sorry...No events available!</p>
+            <div *ngIf="errMess" class="alert alert-danger mt-2">
+                <strong>Error ! </strong> {{errMess}}.
+            </div>
+        </ng-template>
+</div>

@@ -1,0 +1,12 @@
+<div class="events-wrapper">
+      <div class="text-center">
+        <img src="assets/images/upcoming-events.png" alt="Event Details" class="img-fluid image-container">
+      </div>
+      <div class="events-grid" >
+        <app-event
+          *ngFor="let event of events"
+          [event]="event"
+          (eventSelected)="redirect($event)">
+        </app-event>
+      </div>
+    </div>

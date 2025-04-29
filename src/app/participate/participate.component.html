@@ -1,1 +1,50 @@
+<div class="spacer"></div>
+<div class="d-flex justify-content-center">
+      <div class="d-flex comment-box justify-content-center ">
+            <div class="text-center d-flex justify-content-center align-items-center">
+                  <img class="logo" src="assets/images/register.png" alt="register">
+              </div>
+           
+            <form [formGroup]="Form" (ngSubmit)="submiti()">
+                  <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" formControlName="name" id="name" class="form-control" placeholder="Your name" required>
+                    <div *ngIf="Form.get('name')?.touched && Form.get('name')?.invalid">
+                          <small class="error" *ngIf="Form.get('name')?.errors?.['required']"><i class="fas fa-exclamation-circle"></i> Name is required</small>                   
+                    </div>
+                  </div>
+                
+                  <div class="form-group">
+                        <label for="email">email</label>
+                        <input type="text" formControlName="email" id="email" class="form-control" placeholder="Your email" required>
+                        <div *ngIf="Form.get('email')?.dirty && Form.get('email')?.invalid">
+                            <small class="error" *ngIf="Form.get('email')?.errors?.['required']">
+                                  <i class="fas fa-exclamation-circle"></i> email is required !
+                                </small>
+                             <small class="error" *ngIf="Form.get('email')?.errors?.['email']">
+                                  <i class="fas fa-exclamation-circle"></i> invalid email !
+                                </small>
+                        </div>
+                      </div>
+
+                  <div class="form-group">
+                        <label for="phone">phone</label>
+                        <input type="text" formControlName="phone" id="phone" class="form-control" placeholder="Your phone" required>
+                        <div *ngIf="Form.get('phone')?.dirty && Form.get('phone')?.invalid">
+                            <small class="error" *ngIf="Form.get('phone')?.errors?.['required']">
+                                  <i class="fas fa-exclamation-circle"></i> phone is required !
+                                </small>
+                             <small class="error" *ngIf="Form.get('phone')?.errors?.['pattern']">
+                                  <i class="fas fa-exclamation-circle"></i> invalid phone !
+                                </small>
+                        </div>
+                      </div>
+                
+                  <div class="d-flex justify-content-between">
+                    <button class="btn btn-primary" type="submit" [disabled]="Form.invalid">register</button>
+                  </div>
+                
+                </form>
+      </div>
+</div>
 

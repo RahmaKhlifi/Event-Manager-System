@@ -1,0 +1,32 @@
+<section class="map-card" (click)="toggle()">
+      <div class="map-container">
+        <img  [src]=" event.image? this.baserurl+ event.image : 'assets/images/noimage.png'" alt="{{event.title}}">
+       
+      </div>
+      <div class="btn-check">
+        <button (click)="GotoParticipate()" *ngIf="!isFullPlace()" class="btn-floating bounce av">
+          register here!
+        </button>
+        <button *ngIf="isFullPlace()" class="btn-floating bounce" disabled>
+          <i>Full</i>
+        </button>
+      </div>
+      <div class="card-body" [class.open]="open">
+        
+        <div class="details">
+          <h5 class="title">{{event.title}}</h5>
+          <p class="subtitle">{{event.organizor}}</p>
+          <small class="category">{{event.category}}</small>
+        </div>
+    
+        <div class="actions">
+          <p class="subtitle">{{event.description}}</p>
+        </div>
+    
+        <div class="info">
+          <p><i class="fas fa-map-marker-alt"></i> {{event.location}}</p>
+          <p><i class="far fa-clock"></i> {{event.Date}}</p>
+        </div>
+      </div>
+     
+    </section>

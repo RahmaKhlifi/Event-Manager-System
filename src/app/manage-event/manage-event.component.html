@@ -1,0 +1,262 @@
+<div class="spacer"></div>
+<div
+  class="d-flex justify-content-center align-items-center min-vh-100 page-bg"
+>
+  <div class="card shadow-sm event-card">
+    <!-- Banner + Title -->
+    <div class="card-header text-center border-0">
+      <!-- replace with your own SVG/PNG banner -->
+      <img
+        src="assets/welcome-back.svg"
+        alt="Banner"
+        class="img-fluid mb-3"
+        style="max-height: 80px;"
+      />
+      <h2 class="mb-0">
+        {{ isUpdate ? 'Update Event' : 'Add Event' }}
+      </h2>
+    </div>
+
+    <!-- Form -->
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()" #eventForm="ngForm" novalidate>
+        <!-- Title -->
+        <div class="form-group mb-3">
+          <label for="title">Title</label>
+          <input
+            type="text"
+            id="title"
+            name="title"
+            class="form-control"
+            required
+            [(ngModel)]="event.title"
+            #title="ngModel"
+            [ngClass]="{
+              'is-invalid': title.invalid && title.dirty,
+              'is-valid': title.valid
+            }"
+          />
+          <div
+            *ngIf="title.invalid && (title.dirty || title.touched)"
+            class="invalid-feedback"
+          >
+            Title is required.
+          </div>
+        </div>
+
+             <!-- Category -->
+<div class="form-group mb-4">
+      <label class="form-label d-block mb-2">Category</label>
+    
+      <div class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          type="radio"
+          id="seminaire"
+          name="category"
+          value="seminaire"
+          required
+          [(ngModel)]="event.category"
+          #category="ngModel"
+        />
+        <label class="form-check-label" for="seminaire">Séminaire</label>
+      </div>
+    
+      <div class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          type="radio"
+          id="conference"
+          name="category"
+          value="conference"
+          required
+          [(ngModel)]="event.category"
+        />
+        <label class="form-check-label" for="conference">Conférence</label>
+      </div>
+    
+      <div class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          type="radio"
+          id="atelier"
+          name="category"
+          value="atelier"
+          required
+          [(ngModel)]="event.category"
+        />
+        <label class="form-check-label" for="atelier">Atelier</label>
+      </div>
+    
+      <div
+        *ngIf="category.invalid && (category.dirty || category.touched)"
+        class="invalid-feedback d-block"
+      >
+        Please select a category.
+      </div>
+    </div>
+
+        <!-- Date -->
+        <div class="form-group mb-3">
+          <label for="Date">Date</label>
+          <input
+            type="date"
+            id="Date"
+            name="Date"
+            class="form-control"
+            required
+            [(ngModel)]="event.Date"
+            #Date="ngModel"
+            [ngClass]="{
+              'is-invalid': Date.invalid && Date.dirty,
+              'is-valid': Date.valid
+            }"
+          />
+          <div
+            *ngIf="Date.invalid && (Date.dirty || Date.touched)"
+            class="invalid-feedback"
+          >
+            Date is required.
+          </div>
+        </div>
+
+        <!-- Location -->
+        <div class="form-group mb-3">
+          <label for="location">Location</label>
+          <input
+            type="text"
+            id="location"
+            name="location"
+            class="form-control"
+            required
+            [(ngModel)]="event.location"
+            #location="ngModel"
+            [ngClass]="{
+              'is-invalid': location.invalid && location.dirty,
+              'is-valid': location.valid
+            }"
+          />
+          <div
+            *ngIf="location.invalid && (location.dirty || location.touched)"
+            class="invalid-feedback"
+          >
+            Location is required.
+          </div>
+        </div>
+
+        <!-- Number of Places -->
+        <div class="form-group mb-3">
+          <label for="numplaces">Number of places</label>
+          <input
+            type="number"
+            id="numplaces"
+            name="numplaces"
+            class="form-control"
+            required
+            min="0"
+            [(ngModel)]="event.numplaces"
+            #numplaces="ngModel"
+            [ngClass]="{
+              'is-invalid': numplaces.invalid && numplaces.dirty,
+              'is-valid': numplaces.valid
+            }"
+          />
+          <div
+            *ngIf="numplaces.invalid && (numplaces.dirty || numplaces.touched)"
+            class="invalid-feedback"
+          >
+            Must be 0 or more.
+          </div>
+        </div>
+
+        <!-- Image -->
+        <div class="form-group mb-3">
+          <label for="image">Image</label>
+          <input
+            type="file"
+            id="image"
+            name="image"
+            class="form-control"
+            (change)="onFileSelected($event)"
+          />
+          <div
+            *ngIf="!event.image && isImageTouched"
+            class="invalid-feedback"
+          >
+            Image is required.
+          </div>
+        </div>
+
+        <!-- Price -->
+        <div class="form-group mb-3">
+          <label for="price">Price</label>
+          <input
+            type="number"
+            id="price"
+            name="price"
+            class="form-control"
+            required
+            min="0"
+            [(ngModel)]="event.price"
+            #price="ngModel"
+            [ngClass]="{
+              'is-invalid': price.invalid && price.dirty,
+              'is-valid': price.valid
+            }"
+          />
+          <div
+            *ngIf="price.invalid && (price.dirty || price.touched)"
+            class="invalid-feedback"
+          >
+            Must be 0 or more.
+          </div>
+        </div>
+
+        <!-- Description -->
+        <div class="form-group mb-4">
+          <label for="description">Description</label>
+          <textarea
+            id="description"
+            name="description"
+            class="form-control"
+            required
+            rows="3"
+            [(ngModel)]="event.description"
+            #description="ngModel"
+            [ngClass]="{
+              'is-invalid': description.invalid && description.dirty,
+              'is-valid': description.valid
+            }"
+          ></textarea>
+          <div
+            *ngIf="
+              description.invalid && (description.dirty || description.touched)
+            "
+            class="invalid-feedback"
+          >
+            Description is required.
+          </div>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div
+          *ngIf="isLoading"
+          class="d-flex justify-content-center mb-3"
+        >
+          <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+
+        <!-- Save Button -->
+        <button
+          type="submit"
+          class="btn btn-warning btn-block"
+          [disabled]="eventForm.invalid || isLoading"
+        >
+          {{ isUpdate ? 'Update' : 'Save' }}
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
