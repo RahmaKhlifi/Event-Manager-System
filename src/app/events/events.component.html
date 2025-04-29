@@ -1,16 +1,27 @@
 <div class="events-wrapper">
-      <div class="text-center">
-        <img src="assets/images/upcoming-events.png" alt="Event Details" class="img-fluid image-container">
-      </div>
-      <div class="events-grid" *ngIf="!iswaiting" >
-        <app-event
-          *ngFor="let event of events"
-          [event]="event"
-          (eventSelected)="redirect($event)">
-        </app-event>
-      </div>
-      <div *ngIf="iswaiting" class="text-center">
-        <div class="spinner-border" role="status"></div>
-        <h4>Loading... Please Wait</h4>
-      </div>
+  <div class="text-center">
+    <img src="assets/images/upcoming-events.png" alt="Event Details" class="img-fluid image-container">
+  </div>
+ <div class="input-group mb-3">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Search by category, title, or price"
+    [(ngModel)]="searchQuery"
+  />
+  <button class="btn btn-secondary" (click)="searchEvents()">Search</button>
+  <button class="btn btn-secondary" (click)="resetFilters()">
+    <div *ngIf="!iswaiting">Reset</div>
+    <div *ngIf="iswaiting" class="spinner-border text-light" role="status">
+      <span class="visually-hidden"></span>
     </div>
+  </button>
+</div>
+<div class="events-grid">
+  <app-event
+    *ngFor="let event of filteredEvents"
+    [event]="event"
+    (eventSelected)="redirect(event.id)"
+  ></app-event>
+</div>
+</div>

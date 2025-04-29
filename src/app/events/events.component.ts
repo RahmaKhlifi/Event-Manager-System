@@ -10,9 +10,28 @@ import { Router } from '@angular/router';
   styleUrls: ['./events.component.css']
 })
 export class EventsComponent implements OnInit {
+resetFilters() {
+  this.iswaiting = true;
+    this.eventService.getEvents().subscribe(
+      (events: Event[]) => {
+        this.events = events;
+        this.filteredEvents = events;
+        console.log(this.events);
+        this.iswaiting = false;
+      },
+      (error) => {
+        console.error('Error fetching events:', error);
+        this.iswaiting = false;
+      }
+    );
+  this.searchQuery = '';
+}
   baseurl = BaseURL;
   events: Event[] = [];
+  filteredEvents: Event[] = [];
   iswaiting: boolean = false;
+  searchQuery: string = '';
+
  /* event : Event = {
     id: 0,
     title: 'first event',
@@ -38,12 +57,72 @@ export class EventsComponent implements OnInit {
     this.eventService.getEvents().subscribe(
       (events: Event[]) => {
         this.events = events;
+        this.filteredEvents = events;
         console.log(this.events);
         this.iswaiting = false;
       },
       (error) => {
         console.error('Error fetching events:', error);
       }
+    );
+  }
+  filterByCategory(category: string): void {
+    this.iswaiting = true;
+    this.eventService.getEvents().subscribe(
+      (events: Event[]) => {
+        this.events = events.filter(event => event.category === category);
+        this.iswaiting = false;
+      },
+      (error) => {
+        console.error('Error filtering events by category:', error);
+        this.iswaiting = false;
+      }
+    );
+  }
+
+  filterByTitle(title: string): void {
+    this.iswaiting = true;
+    this.eventService.getEvents().subscribe(
+      (events: Event[]) => {
+        this.events = events.filter(event => event.title.toLowerCase().includes(title.toLowerCase()));
+        this.iswaiting = false;
+      },
+      (error) => {
+        console.error('Error filtering events by title:', error);
+        this.iswaiting = false;
+      }
+    );
+  }
+
+  filterByPrice(minPrice: number, maxPrice: number): void {
+    this.iswaiting = true;
+    this.eventService.getEvents().subscribe(
+      (events: Event[]) => {
+        this.events = events.filter(event => event.price >= minPrice && event.price <= maxPrice);
+        this.iswaiting = false;
+      },
+      (error) => {
+        console.error('Error filtering events by price:', error);
+        this.iswaiting = false;
+      }
+    );
+  }
+
+  filterEvents(query: string): void {
+    const lowerQuery = query.toLowerCase();
+    this.filteredEvents = this.events.filter(event =>
+      event.category.toLowerCase().includes(lowerQuery) ||
+      event.title.toLowerCase().includes(lowerQuery) ||
+      event.price.toString().includes(lowerQuery)
+    );
+  }
+
+  searchEvents(): void {
+    const lowerQuery = this.searchQuery.toLowerCase();
+    this.filteredEvents = this.events.filter(event =>
+      event.category.toLowerCase().includes(lowerQuery) ||
+      event.title.toLowerCase().includes(lowerQuery) ||
+      event.price.toString().includes(lowerQuery)
     );
   }
 }

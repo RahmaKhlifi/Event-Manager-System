@@ -39,4 +39,11 @@ export class EventService {
   getEventsByLocation(location: string): Observable<Event[]> {
     return this.http.get<Event[]>(this.BaseURL + '?location=' + location);
   }
+
+  getEventsByPrice(price: number): Observable<Event[]> {
+    return this.http.get<Event[]>(this.BaseURL + '?price=' + price);
+  }
+  getEventsByTitle(title: string): Observable<Event[]> {  
+    return this.http.get<Event[]>(this.BaseURL + '?title=' + title);
+  }
 }

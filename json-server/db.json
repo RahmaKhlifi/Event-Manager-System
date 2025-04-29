@@ -21,7 +21,7 @@
       "Date": "2023-10-03",
       "location": "Location 3",
       "description": "Description for Event 3",
-      "numplaces": 14,
+      "numplaces": 13,
       "price": 50,
       "category": "conference",
       "organizor": "Organizer 1"
@@ -106,6 +106,13 @@
       "phone": "55555555",
       "eventId": 3,
       "id": 8
+    },
+    {
+      "name": "Rahma Khlifi",
+      "email": "tg@mail.com",
+      "phone": "55555555",
+      "eventId": 3,
+      "id": 9
     }
   ]
 }
