@@ -63,6 +63,19 @@
       "numplaces": 7,
       "price": 8,
       "organizor": ""
+    },
+    {
+      "image": "",
+      "adminID": 1,
+      "category": "atelier",
+      "id": 8,
+      "title": "test1",
+      "description": "1111",
+      "Date": "2025-05-11",
+      "location": "gg",
+      "numplaces": 9,
+      "price": 7,
+      "organizor": ""
     }
   ],
   "participants": [

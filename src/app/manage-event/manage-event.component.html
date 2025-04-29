@@ -107,6 +107,7 @@
             required
             [(ngModel)]="event.Date"
             #Date="ngModel"
+            [min]="minDate"
             [ngClass]="{
               'is-invalid': Date.invalid && Date.dirty,
               'is-valid': Date.valid
