@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { ManageEventComponent } from './manage-event/manage-event.component';
 import { EventDetailComponent } from './event-detail/event-detail.component';
+import { ParticipantsComponent } from './participants/participants.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { EventDetailComponent } from './event-detail/event-detail.component';
     AdminHomeComponent,
     ManageEventComponent,
     EventDetailComponent,
+    ParticipantsComponent,
   ],
   imports: [
     BrowserModule,

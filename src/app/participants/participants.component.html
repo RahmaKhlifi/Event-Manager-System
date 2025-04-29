@@ -1,0 +1,23 @@
+<div class="spacer"></div>
+<div *ngIf="!isloading">
+      <div class="container" *ngIf="Participants.length>0; else noParticipants">
+            <h2 class="text-center">List Of Participants </h2> <br>
+            <ul class="list-group">
+                  <li class="list-group-item" *ngFor="let item of Participants; let i = index">
+                        {{item.name}} - {{item.email}} - {{item.phone}}
+                        <button (click)="onDeleteParticipant(item.id , i)">
+                              <div *ngIf="iswaiting[i]==false">delete</div>
+                              <div *ngIf="iswaiting[i]==true" class="spinner-border" role="status"></div>
+                        </button>
+                  </li>
+            </ul>
+      </div>
+</div>
+
+<div *ngIf="isloading" class="text-center">
+      <div class="spinner-border" role="status"></div>
+      <h4>Loading... Please Wait</h4>
+</div>
+<ng-template #noParticipants>
+      <p class="empty-state">No participants yet.</p>
+</ng-template>

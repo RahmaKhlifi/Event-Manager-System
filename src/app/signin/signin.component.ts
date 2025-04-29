@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-signin',
@@ -8,15 +9,28 @@ import { Router } from '@angular/router';
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent {
-  email: string = '';
-  password : string = '';
-  
-  constructor(private authserv : AuthService ,private router : Router) { }
-  login(){
-    console.log("yekhdem");
-    let test = this.authserv.login(this.email , this.password);
-    if (test == true){
-      this.router.navigateByUrl('/home');      
+  signinForm: FormGroup;
+
+  constructor(
+    private authserv: AuthService,
+    private router: Router,
+    private fb: FormBuilder
+  ) {
+    this.signinForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
+    });
   }
-}
+
+  login() {
+    if (this.signinForm.valid) {
+      const { email, password } = this.signinForm.value;
+      const test = this.authserv.login(email, password);
+      if (test === true) {
+        this.router.navigateByUrl('/home');
+      }
+    } else {
+      console.log('Form is invalid');
+    }
+  }
 }

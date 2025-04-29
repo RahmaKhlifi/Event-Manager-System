@@ -14,7 +14,7 @@ isImageTouched: any;
 onFileSelected($event: globalThis.Event) {
 throw new Error('Method not implemented.');
 }
-  event: Event = new Event(null,0,"","","","",0,0,"","",""); // Adjusted to match the expected arguments
+  event: Event = new Event(null,1,"","","","",0,0,"","",""); // Adjusted to match the expected arguments
   isLoading: boolean = false; // Variable pour suivre l'état de chargement
   isUpdate = false;
   constructor(private eventService: EventService,

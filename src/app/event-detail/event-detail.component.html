@@ -3,11 +3,13 @@
       [src]="event.image? this.baseurl+ event.image : 'assets/images/noimage.png'" alt="event Image">
       <div class="card-body">
         <h5 class="card-title">{{ event.title }}</h5>
+        <p class="card-text">Category: {{ event.category }}</p>
         <p class="card-text">Price: {{ event.price| currency}}</p>
         <p class="card-text">Description: {{ event.description }}</p>
         <p class="card-text">Date: {{ event.Date }}</p>
         <p class="card-text">Location: {{ event.location }}</p>
         <p class="card-text">Number Of Places: {{ event.numplaces }}</p>
+        <a class="btn btn-primary" routerLink="/list/{{event.id}}">Go To List Of Participants </a>
       </div>
       <div class="card-footer">
         <div class="row">

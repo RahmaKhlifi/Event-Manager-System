@@ -8,6 +8,7 @@ import { ParticipateComponent } from './participate/participate.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { authGuard } from './guards/auth.guard';
 import { ManageEventComponent } from './manage-event/manage-event.component';
+import { ParticipantsComponent } from './participants/participants.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path:'signup', component:SignupComponent },
   {path:'participate/:id', component:ParticipateComponent },
   {path:'home', component:AdminHomeComponent  },
-  {path:'manage/:id', component:ManageEventComponent  }
+  {path:'manage/:id', component:ManageEventComponent  },
+  {path:'list/:id', component:ParticipantsComponent }
 ];
 
 

@@ -20,4 +20,17 @@ export class LowerPlaceService {
       }
     });
   }
+
+  UpperPlace(eventID: number){
+    this.eventserv.getEvent(eventID).subscribe((event) => {
+      if (event) {
+        event.numplaces = event.numplaces + 1;
+        this.eventserv.updateEvent(event).subscribe(() => {
+          console.log('Event place updated to Upper Place');
+        });
+      } else {
+        console.error('Event not found');
+      }
+    });
+  }
 }

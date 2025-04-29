@@ -1,0 +1,108 @@
+/* Global reset & typography */
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      /* full-bleed event background */
+      background: url('/assets/EventManager_Background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Open Sans', sans-serif;
+      color: #ffffff;
+      line-height: 1.5;
+    }
+    
+    /* Spacer to push content down below any nav/header */
+    .spacer {
+      height: 30vh;
+    }
+    
+    /* Centered, translucent container for your list (lightened) */
+    .container {
+      max-width: 700px;
+      margin: -100px auto 40px;
+      /* from 65% opacity to 40% so the background shows through more */
+      background: rgba(0, 0, 0, 0.40);
+      padding: 30px 20px;
+      border-radius: 12px;
+      /* soften the shadow a bit */
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+    }
+    
+    /* Remove default UL styling */
+    .list-group {
+      list-style: none;
+    }
+    
+    /* Each participant item — lighter neon-glow hover effect */
+    .list-group-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      /* from 5% to 10% white overlay for better legibility */
+      background: rgba(255, 255, 255, 0.533);
+      border: none;
+      margin-bottom: 16px;
+      padding: 14px 18px;
+      border-radius: 8px;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+    .list-group-item::before {
+      content: '';
+      position: absolute;
+      top: -2px; bottom: -2px; left: -2px; right: -2px;
+      border-radius: 10px;
+      background: linear-gradient(45deg, #ff79c6, #8c9eff);
+      filter: blur(6px);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+    }
+    .list-group-item:hover {
+      /* slightly stronger on hover but still light */
+      background: rgba(255, 255, 255, 0.433);
+    }
+    .list-group-item:hover::before {
+      opacity: 1;
+    }
+    
+    /* Participant text styling */
+    .list-group-item span {
+      overflow-wrap: anywhere;
+    }
+    
+    /* Delete button — softer neon outline */
+    .list-group-item button {
+      background: transparent;
+      border: 2px solid #9231D2;
+      color: #9231D2;
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.25s ease, color 0.25s ease;
+    }
+    .list-group-item button:hover {
+      background: #9231D2;
+      color: #ffffff;
+    }
+    
+    /* Responsive tweaks */
+    @media (max-width: 600px) {
+      .container {
+        margin: -80px 20px 20px;
+        padding: 20px 12px;
+      }
+      .list-group-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .list-group-item button {
+        margin-top: 8px;
+        align-self: flex-end;
+      }
+    }
+    

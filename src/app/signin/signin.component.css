@@ -57,4 +57,12 @@
         margin-right: 10px;   
       
     }
+    .error {
+      color: #dc3545;             /* Bootstrap's danger color (red) */
+      font-style: italic;
+      font-size: 0.875rem;        /* Slightly smaller for helper text */
+      margin-top: 4px;
+      display: block;
+      transition: all 0.3s ease;  /* Smooth appearance */
+    }
   }

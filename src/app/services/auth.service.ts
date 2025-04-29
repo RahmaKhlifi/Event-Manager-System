@@ -14,7 +14,7 @@ export class AuthService {
 
   public login(email: string, password: string): boolean {
     this.authstalker$.next(false);
-    if (email === 'admin' && password === 'admin') {
+    if (email === 'admin@admin' && password === 'admin123') {
       
       this.authstalker$.next(true);
       

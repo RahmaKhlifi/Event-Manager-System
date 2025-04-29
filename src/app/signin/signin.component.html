@@ -1,25 +1,31 @@
 <div class="spacer"></div>
-    <div class="d-flex align-items-center justify-content-center" style="min-height: calc(100vh - 56px);">
-      <div class="card w-100" style="max-width: 400px;">
-        <div class="card-body p-4">
-        <div class="text-center">
-            <img class="logo" src="assets/images/welcomeback.png" alt="welcome">
-        </div>
-          <h3 class="form-heading text-center">Sign In</h3> 
-          <form>
-            <div class="form-group">
-              <label for="signinEmail">Email address</label>
-              <input [(ngModel)]="email" name="email" type="email" class="form-control" id="signinEmail" placeholder="Enter email">
-            </div>
-            <div class="form-group">
-              <label for="signinPassword">Password</label>
-              <input [(ngModel)]="password" name="password" type="password" class="form-control" id="signinPassword" placeholder="Password">
-            </div>
-            <button type="button" (click)="login()" class="btn btn-gold btn-block">Sign In</button>
-          </form>
-          <div class="text-center mt-3">
-            <small>Don't have an account? <a routerLink="/signup">Sign Up</a></small>
+<div class="d-flex align-items-center justify-content-center" style="min-height: calc(100vh - 56px);">
+  <div class="card w-100" style="max-width: 400px;">
+    <div class="card-body p-4">
+      <div class="text-center">
+        <img class="logo" src="assets/images/welcomeback.png" alt="welcome">
+      </div>
+      <h3 class="form-heading text-center">Sign In</h3>
+      <form [formGroup]="signinForm" (ngSubmit)="login()">
+        <div class="form-group">
+          <label for="signinEmail">Email address</label>
+          <input formControlName="email" type="email" class="form-control" id="signinEmail" placeholder="Enter email">
+          <div *ngIf="signinForm.get('email')?.invalid && signinForm.get('email')?.touched" class="text-danger error">
+            <i class="fas fa-exclamation-circle"></i> Please enter a valid email.
           </div>
         </div>
+        <div class="form-group">
+          <label for="signinPassword">Password</label>
+          <input formControlName="password" type="password" class="form-control" id="signinPassword" placeholder="Password">
+          <div *ngIf="signinForm.get('password')?.invalid && signinForm.get('password')?.touched" class="text-danger error">
+            <i class="fas fa-exclamation-circle"></i> Password must be at least 6 characters long.
+          </div>
+        </div>
+        <button type="submit" class="btn btn-gold btn-block" [disabled]="signinForm.invalid">Sign In</button>
+      </form>
+      <div class="text-center mt-3">
+        <small>Don't have an account? <a routerLink="/signup">Sign Up</a></small>
       </div>
     </div>
+  </div>
+</div>
