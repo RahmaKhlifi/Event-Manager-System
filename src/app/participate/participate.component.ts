@@ -14,6 +14,7 @@ import { LowerPlaceService } from '../services/lower-place.service';
 export class ParticipateComponent implements OnInit {
   eventId: number;
   Form : FormGroup ;
+  iswaiting : boolean = false ;
   constructor( private place : LowerPlaceService,private router : Router, private route: ActivatedRoute, private builder: FormBuilder, private participantserv: ParticipantService){
        this.Form = this.builder.group({
        "name" : ["",[Validators.required , Validators.minLength(3)]],
@@ -22,14 +23,17 @@ export class ParticipateComponent implements OnInit {
      }) ;
   }  
   ngOnInit(): void {
+    this.iswaiting = true ;
     this.route.params.subscribe(params => {
       this.eventId = +params['id']; // Get the event ID from the route parameters
       console.log(this.eventId);
+      this.iswaiting = false ;
     }
     );
   }
   
   submiti(){
+    this.iswaiting = true
     console.log(this.Form.value);
     let participant : Participant = {
       name: this.Form.value.name,
@@ -47,9 +51,11 @@ export class ParticipateComponent implements OnInit {
         this.place.LowerPlace(this.eventId);
         alert("You have successfully registered for the event");
         this.router.navigate(['/']);
+        this.iswaiting = false ;
       },
       error => {
         console.error('Error adding participant:', error);
+        this.iswaiting = false ;
       }
     );
    

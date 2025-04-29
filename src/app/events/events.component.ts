@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class EventsComponent implements OnInit {
   baseurl = BaseURL;
   events: Event[] = [];
+  iswaiting: boolean = false;
  /* event : Event = {
     id: 0,
     title: 'first event',
@@ -33,10 +34,12 @@ export class EventsComponent implements OnInit {
 
   }
   ngOnInit(): void {
+    this.iswaiting = true;
     this.eventService.getEvents().subscribe(
       (events: Event[]) => {
         this.events = events;
         console.log(this.events);
+        this.iswaiting = false;
       },
       (error) => {
         console.error('Error fetching events:', error);

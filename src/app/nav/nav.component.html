@@ -1,9 +1,13 @@
 <nav class="navbar-floating navbar navbar-expand-lg navbar-light bg-light">
   <div class="container d-flex justify-content-between align-items-center">
     <img class="logo" routerLink="/" src="assets/images/logo.png" alt="logo" style="cursor: pointer;">
-    <div *ngIf="isLoggedIn">  
+    <div class="d-flex ms-auto" *ngIf="isLoggedIn">
+      <button class="btn btn-danger me-3" routerLink="/home">
+      Manage
+      </button>
+      <div class="ecart" ></div>
       <button class="btn btn-danger" (click)="logout()" routerLink="/">
-        logout
+      LogOut
       </button>
     </div>
   </div>

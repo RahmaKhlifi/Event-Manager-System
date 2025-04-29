@@ -2,11 +2,15 @@
       <div class="text-center">
         <img src="assets/images/upcoming-events.png" alt="Event Details" class="img-fluid image-container">
       </div>
-      <div class="events-grid" >
+      <div class="events-grid" *ngIf="!iswaiting" >
         <app-event
           *ngFor="let event of events"
           [event]="event"
           (eventSelected)="redirect($event)">
         </app-event>
+      </div>
+      <div *ngIf="iswaiting" class="text-center">
+        <div class="spinner-border" role="status"></div>
+        <h4>Loading... Please Wait</h4>
       </div>
     </div>

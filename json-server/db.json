@@ -7,7 +7,7 @@
       "Date": "2023-10-01",
       "location": "Location 1",
       "description": "Description for Event 1",
-      "numplaces": 1,
+      "numplaces": 0,
       "price": 100,
       "category": "atelier",
       "image": "images/conference.jpg",
@@ -21,7 +21,7 @@
       "Date": "2023-10-03",
       "location": "Location 3",
       "description": "Description for Event 3",
-      "numplaces": 16,
+      "numplaces": 14,
       "price": 50,
       "category": "conference",
       "organizor": "Organizer 1"
@@ -72,6 +72,27 @@
       "phone": "12345678",
       "eventId": 3,
       "id": 5
+    },
+    {
+      "name": "Rahma Khlifi",
+      "email": "tg@mail.com",
+      "phone": "55555555",
+      "eventId": 1,
+      "id": 6
+    },
+    {
+      "name": "Rahma Khlifi",
+      "email": "tg@mail.com",
+      "phone": "55555555",
+      "eventId": 3,
+      "id": 7
+    },
+    {
+      "name": "Rahma Khlifi",
+      "email": "tg@mail.com",
+      "phone": "55555555",
+      "eventId": 3,
+      "id": 8
     }
   ]
 }

@@ -41,7 +41,10 @@
                       </div>
                 
                   <div class="d-flex justify-content-between">
-                    <button class="btn btn-primary" type="submit" [disabled]="Form.invalid">register</button>
+                    <button class="btn btn-primary" type="submit" [disabled]="Form.invalid">
+                        <div *ngIf="!iswaiting" >register</div>
+                        <div *ngIf="iswaiting" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></div>
+                  </button>
                   </div>
                 
                 </form>
